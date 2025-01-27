@@ -8,6 +8,17 @@ export default async function Home() {
 
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+      <header className="row-start-1">
+        <div className="flex items-center gap-4">
+          <img
+            src={session.user?.image ?? ""}
+            alt={session.user?.name ?? ""}
+            className="w-10 h-10 rounded-full"
+          />
+          <h1 className="text-2xl font-bold">{session.user?.name}</h1>
+        </div>
+        <p className="text-sm text-gray-500 mt-2">{session.user?.email}</p>
+      </header>
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <h2 className="text-2xl font-bold">Current Session</h2>
         <pre className="py-6 px-4 whitespace-pre-wrap break-all">
