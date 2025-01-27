@@ -2,6 +2,7 @@ import Image from "next/image";
 import { auth } from "@/auth";
 import Sinin from "@/components/Sinin";
 import Logout from "@/components/Logout";
+import Link from "next/link";
 
 export default async function Home() {
   const session = await auth();
@@ -26,6 +27,9 @@ export default async function Home() {
         <pre className="py-6 px-4 whitespace-pre-wrap break-all">
           {JSON.stringify(session, null, 2)}
         </pre>
+        <Link href="/client-session" className="text-blue-500 underline">
+          クライアントコンポーネントでのセッション取得
+        </Link>
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
         <a
