@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { auth } from "@/auth";
 import Sinin from "@/components/Sinin";
+import Logout from "@/components/Logout";
 
 export default async function Home() {
   const session = await auth();
@@ -18,6 +19,7 @@ export default async function Home() {
           <h1 className="text-2xl font-bold">{session.user?.name}</h1>
         </div>
         <p className="text-sm text-gray-500 mt-2">{session.user?.email}</p>
+        <Logout />
       </header>
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <h2 className="text-2xl font-bold">Current Session</h2>
